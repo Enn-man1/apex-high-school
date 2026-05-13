@@ -1,0 +1,118 @@
+mutation CreateDemoData @transaction @auth(level: USER, insecureReason: "This mutation is for seeding data and should only be run by authenticated users in a development environment.") {
+  user_insertMany(data: [
+    {
+      id: "d9e8c7b6-5a4e-3d2c-1b0a-9f8e7d6c5b4a",
+      username: "teacher_bob",
+      passwordHash: "hashed_password_teacher_bob",
+      role: "TEACHER",
+      createdAt: "2023-01-01T10:00:00Z",
+      firstName: "Bob",
+      lastName: "Smith",
+      email: "bob.smith@example.com"
+    },
+    {
+      id: "c8b7a6d5-4e3c-2b1a-0d9e-8c7b6a5d4e3c",
+      username: "student_alice",
+      passwordHash: "hashed_password_student_alice",
+      role: "STUDENT",
+      createdAt: "2023-01-01T10:05:00Z",
+      firstName: "Alice",
+      lastName: "Johnson",
+      email: "alice.johnson@example.com"
+    },
+    {
+      id: "b7a6d5c4-3b2a-1e0d-9c8b-7a6d5c4b3a21",
+      username: "student_charlie",
+      passwordHash: "hashed_password_student_charlie",
+      role: "STUDENT",
+      createdAt: "2023-01-01T10:10:00Z",
+      firstName: "Charlie",
+      lastName: "Brown",
+      email: "charlie.brown@example.com"
+    }
+  ])
+  course_insertMany(data: [
+    {
+      id: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+      name: "Introduction to Computer Science",
+      code: "CS101",
+      createdAt: "2023-01-01T11:00:00Z",
+      description: "A foundational course in computer science.",
+      credits: 3
+    },
+    {
+      id: "f1e2d3c4-b5a6-9870-6543-210fedcba987",
+      name: "Calculus I",
+      code: "MA201",
+      createdAt: "2023-01-01T11:05:00Z",
+      description: "First course in differential and integral calculus.",
+      credits: 4
+    }
+  ])
+  class_insertMany(data: [
+    {
+      id: "12345678-1234-5678-1234-567812345678",
+      name: "CS101 - Fall 2023",
+      courseId: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+      teacherId: "d9e8c7b6-5a4e-3d2c-1b0a-9f8e7d6c5b4a",
+      semester: "Fall",
+      year: 2023,
+      capacity: 30,
+      createdAt: "2023-01-01T12:00:00Z",
+      schedule: "MWF 10:00 AM - 10:50 AM",
+      roomNumber: "B101"
+    },
+    {
+      id: "87654321-4321-8765-4321-876543218765",
+      name: "MA201 - Fall 2023",
+      courseId: "f1e2d3c4-b5a6-9870-6543-210fedcba987",
+      teacherId: "d9e8c7b6-5a4e-3d2c-1b0a-9f8e7d6c5b4a",
+      semester: "Fall",
+      year: 2023,
+      capacity: 25,
+      createdAt: "2023-01-01T12:05:00Z",
+      schedule: "TTh 11:00 AM - 12:15 PM",
+      roomNumber: "C203"
+    }
+  ])
+  assignment_insertMany(data: [
+    {
+      id: "e9d8c7b6-a5f4-e3d2-c1b0-a9f8e7d6c5b4",
+      name: "CS101 - Homework 1",
+      classId: "12345678-1234-5678-1234-567812345678",
+      dueDate: "2023-09-15",
+      createdAt: "2023-09-01T09:00:00Z",
+      description: "First homework covering basic programming concepts.",
+      maxPoints: 100
+    },
+    {
+      id: "d8c7b6a5-f4e3-d2c1-b0a9-f8e7d6c5b4a3",
+      name: "MA201 - Quiz 1",
+      classId: "87654321-4321-8765-4321-876543218765",
+      dueDate: "2023-09-20",
+      createdAt: "2023-09-05T10:00:00Z",
+      description: "Quiz on differentiation rules.",
+      maxPoints: 50
+    }
+  ])
+  enrollment_insertMany(data: [
+    {
+      studentId: "c8b7a6d5-4e3c-2b1a-0d9e-8c7b6a5d4e3c",
+      classId: "12345678-1234-5678-1234-567812345678",
+      enrollmentDate: "2023-08-28",
+      createdAt: "2023-08-28T14:00:00Z"
+    },
+    {
+      studentId: "c8b7a6d5-4e3c-2b1a-0d9e-8c7b6a5d4e3c",
+      classId: "87654321-4321-8765-4321-876543218765",
+      enrollmentDate: "2023-08-28",
+      createdAt: "2023-08-28T14:05:00Z"
+    },
+    {
+      studentId: "b7a6d5c4-3b2a-1e0d-9c8b-7a6d5c4b3a21",
+      classId: "12345678-1234-5678-1234-567812345678",
+      enrollmentDate: "2023-08-29",
+      createdAt: "2023-08-29T09:00:00Z"
+    }
+  ])
+}

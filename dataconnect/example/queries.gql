@@ -1,0 +1,15 @@
+query GetUserClasses($userId: UUID!) @auth(level: USER) {
+      user(id: $userId) {
+        firstName
+        lastName
+        classes_via_Enrollment {
+          name
+          semester
+          year
+          course {
+            name
+            code
+          }
+        }
+      }
+    }

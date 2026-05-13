@@ -1,0 +1,54 @@
+type User @table {
+  username: String!
+  passwordHash: String!
+  role: String!
+  createdAt: Timestamp!
+  firstName: String
+  lastName: String
+  email: String
+}
+
+type Course @table {
+  name: String!
+  code: String!
+  createdAt: Timestamp!
+  description: String
+  credits: Int
+}
+
+type Class @table {
+  name: String!
+  course: Course!
+  teacher: User!
+  semester: String!
+  year: Int!
+  capacity: Int!
+  createdAt: Timestamp!
+  schedule: String
+  roomNumber: String
+}
+
+type Enrollment @table(key: ["student", "class"]) {
+  student: User!
+  class: Class!
+  enrollmentDate: Date!
+  createdAt: Timestamp!
+  grade: Float
+}
+
+type Assignment @table {
+  name: String!
+  class: Class!
+  dueDate: Date!
+  createdAt: Timestamp!
+  description: String
+  maxPoints: Int
+}
+
+type Grade @table(key: ["student", "assignment"]) {
+  student: User!
+  assignment: Assignment!
+  score: Float!
+  createdAt: Timestamp!
+  feedback: String
+}
