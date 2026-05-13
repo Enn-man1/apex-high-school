@@ -5,12 +5,12 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD3ErGjDTEa6aNH4Vpsys6YqKMaB0iV0Co",
-  authDomain: "schoolapp-94c19.firebaseapp.com",
-  projectId: "schoolapp-94c19",
-  storageBucket: "schoolapp-94c19.firebasestorage.app",
-  messagingSenderId: "189543043204",
-  appId: "1:189543043204:web:91779db707b10ac288f2d1",
+  apiKey:            process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain:        process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId:         process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket:     process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId:             process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 
@@ -25,7 +25,7 @@ export const auth      = getAuth(app);
 export const secondaryAuth = getAuth(secondaryApp);
 export const db        = getFirestore(app);
 export const storage   = getStorage(app);
-export const FLW_PUBLIC_KEY = 'FLWPUBK_TEST-119416feb7fcb1218244d8646ae9d768-X';
+export const FLW_PUBLIC_KEY = process.env.REACT_APP_FLUTTERWAVE_PUBLIC_KEY;
 // Replace with your actual key from https://dashboard.flutterwave.com
 
 export const Collections = {
