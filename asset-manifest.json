@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/apex-high-school/static/css/main.5b1fa83b.css",
-    "main.js": "/apex-high-school/static/js/main.a1a94e26.js",
+    "main.js": "/apex-high-school/static/js/main.d4c074f2.js",
     "static/js/239.6bbea3e2.chunk.js": "/apex-high-school/static/js/239.6bbea3e2.chunk.js",
     "static/js/977.cfbb9a23.chunk.js": "/apex-high-school/static/js/977.cfbb9a23.chunk.js",
     "static/js/732.77fd6030.chunk.js": "/apex-high-school/static/js/732.77fd6030.chunk.js",
     "static/js/453.85c2bee8.chunk.js": "/apex-high-school/static/js/453.85c2bee8.chunk.js",
     "index.html": "/apex-high-school/index.html",
     "main.5b1fa83b.css.map": "/apex-high-school/static/css/main.5b1fa83b.css.map",
-    "main.a1a94e26.js.map": "/apex-high-school/static/js/main.a1a94e26.js.map",
+    "main.d4c074f2.js.map": "/apex-high-school/static/js/main.d4c074f2.js.map",
     "239.6bbea3e2.chunk.js.map": "/apex-high-school/static/js/239.6bbea3e2.chunk.js.map",
     "977.cfbb9a23.chunk.js.map": "/apex-high-school/static/js/977.cfbb9a23.chunk.js.map",
     "732.77fd6030.chunk.js.map": "/apex-high-school/static/js/732.77fd6030.chunk.js.map",
@@ -16,6 +16,6 @@
   },
   "entrypoints": [
     "static/css/main.5b1fa83b.css",
-    "static/js/main.a1a94e26.js"
+    "static/js/main.d4c074f2.js"
   ]
 }
