@@ -23,7 +23,7 @@ function LogoImage({ size = 72 }) {
   if (!failed) {
     return (
       <img
-        src="./logo.jpg"
+        src={`${process.env.PUBLIC_URL}/logo.jpg`}
         alt="Apex High School"
         style={{
           width: size,
@@ -349,7 +349,7 @@ const s = {
     inset: 0,
     background: `
       linear-gradient(to bottom, rgba(6,18,41,0.92) 0%, rgba(13,27,62,0.88) 100%),
-      url('/Background1.jpg')
+      url(${process.env.PUBLIC_URL}/Background1.jpg)
     `,
     backgroundSize: 'cover',
     backgroundPosition: 'center',

@@ -63,7 +63,7 @@ function LogoImage({ size = 42, radius = 12 }) {
   if (!failed) {
     return (
       <img
-        src="../logo.jpg"
+        src={`${process.env.PUBLIC_URL}/logo.jpg`}
         alt="Apex High School"
         width={size}
         height={size}
